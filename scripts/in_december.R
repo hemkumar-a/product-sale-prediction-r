@@ -14,18 +14,6 @@ daily_sales <- december_data %>%
   arrange(`Transaction Date`)
 
 # ----------------------------
-# Filter December Data
-# ----------------------------
-data$Transaction_Month <- format(data$`Transaction Date`, "%m")
-december_data <- data %>% filter(Transaction_Month == "12")
-
-# Aggregate December daily sales
-daily_sales <- december_data %>%
-  group_by(`Transaction Date`) %>%
-  summarise(Total_Sales = sum(`Total Spent`, na.rm = TRUE)) %>%
-  arrange(`Transaction Date`)
-
-# ----------------------------
 # Split Train/Test (80/20)
 # ----------------------------
 train_size <- round(0.8 * nrow(daily_sales))
