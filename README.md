@@ -77,12 +77,15 @@ source("run_analysis.R")
 
 The runner executes the main analysis and then the December-specific analysis in the same R session. The scripts print evaluation metrics to the console and create the analysis plots in the active R graphics device.
 
-You can also execute the scripts separately:
+
+```markdown
+You can also execute the scripts separately in the same R session:
 
 ```r
 source("scripts/sales_prediction.R")
 source("scripts/in_december.R")
 ```
+The December analysis reuses the cleaned `data` object created by `sales_prediction.R`.
 
 ## Model Evaluation
 
